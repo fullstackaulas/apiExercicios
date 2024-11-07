@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalculadoraController;
+use App\Http\Controllers\ContadorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::post('/calculadora/subtrair', [CalculadoraController::class, 'subtrair'])
 Route::post('/calculadora/dividir', [CalculadoraController::class, 'dividir']);
 Route::post('/calculadora/multiplicar', [CalculadoraController::class, 'multiplicar']);
 Route::post('/calculadora/calcular', [CalculadoraController::class, 'calcular']);
+
+Route::post('/contador/contar', [ContadorController::class, 'contarPost']);
+Route::get('/contador/contar/{de}/{ate}', [ContadorController::class, 'contarGet']);
