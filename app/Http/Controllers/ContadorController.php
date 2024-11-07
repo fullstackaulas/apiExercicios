@@ -12,18 +12,15 @@ class ContadorController extends Controller
 
         $resposta = '';
 
-
         for($x=$de;$x<=$ate;$x++){
             $resposta = $resposta . ',' . $x;
         }
 
         return response($resposta, 200);
-
     }
 
     public function contarGet($de,$ate){
         $resposta = '';
-
 
         for($x=$de;$x<=$ate;$x++){
             $resposta = $resposta . ',' . $x;
