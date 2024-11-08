@@ -1,3 +1,7 @@
+drop database if exists exercicios;
+create database exercicios;
+use exercicios;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -77,3 +81,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE `exercicios`.`agenda` (`id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(125) NOT NULL , `email` VARCHAR(125) NOT NULL , `telefoneCelular` VARCHAR(11) NOT NULL , `telefoneFixo` VARCHAR(10) NULL , `endereco` VARCHAR(1024) NOT NULL , `created_by` INT NOT NULL , `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `updated_by` INT NULL , `updated_at` DATETIME NULL , `deleted_by` INT NULL , `deleted_at` DATETIME NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\CalculadoraImcController;
 use App\Http\Controllers\ContadorController;
@@ -35,3 +36,14 @@ Route::post('/calculadora/calcularimc',[CalculadoraImcController::class,'calcula
 Route::get('/calculadora/calcularimc/{peso}/{altura}',[CalculadoraImcController::class,'calcularImcGet']);
 
 Route::get('/palindromo/verificar/{palavra}',[PalindromoController::class,'verificar']);
+
+
+Route::prefix('agenda')->group(function(){
+    Route::post('/salvar',[AgendaController::class,'salvar']);
+    Route::get('/listar',[AgendaController::class,'listar']);
+    Route::get('/lerUm/{id}',[AgendaController::class,'lerUm']);
+    Route::delete('/deletar/{id}',[AgendaController::class,'deletar']);
+    Route::patch('/atualizarparcial/{id}',[AgendaController::class,'atualizarParcial']);
+// agenda/salvar
+
+});
