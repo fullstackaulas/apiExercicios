@@ -23,10 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/calculadora/somar', [CalculadoraController::class, 'somar']);
-Route::post('/calculadora/subtrair', [CalculadoraController::class, 'subtrair']);
-Route::post('/calculadora/dividir', [CalculadoraController::class, 'dividir']);
-Route::post('/calculadora/multiplicar', [CalculadoraController::class, 'multiplicar']);
 Route::post('/calculadora/calcular', [CalculadoraController::class, 'calcular']);
 
 Route::post('/contador/contar', [ContadorController::class, 'contarPost']);
