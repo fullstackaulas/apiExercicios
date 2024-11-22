@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\CalculadoraImcController;
 use App\Http\Controllers\ContadorController;
@@ -42,4 +43,13 @@ Route::prefix('agenda')->group(function(){
     Route::patch('/atualizarparcial/{id}',[AgendaController::class,'atualizarParcial']);
 // agenda/salvar
 
+});
+
+Route::prefix('usuarios')->group(callback: function(){
+    Route::post('/criar', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
+
+    //primeira rota autenticada
+    Route::middleware('auth:api')->get('/me', [AuthController::class, 'me']);
+    Route::middleware('auth:api')->get('/logout', [AuthController::class, 'logout']);
 });
